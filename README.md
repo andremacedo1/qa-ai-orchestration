@@ -24,6 +24,7 @@ Desenvolvi uma esteira de Qualidade Aumentada (orquestrada por IA) que atua de f
 ## 📊 Arquitetura do Ecossistema
 
 ### 1. Visão Macro: Orquestração de Agentes
+
 ```mermaid
 graph TD
     classDef ai fill:#2a0a4a,stroke:#9d4edd,stroke-width:2px,color:#fff;
@@ -66,6 +67,7 @@ graph TD
     IA->>PW: Gera base do script E2E (Page Objects)
     PW->>PW: Testes E2E (Headless)
     IA->>Tracker: Publica Relatório de Qualidade
+
 
     stateDiagram-v2
     [*] --> PullRequestCriado: Dev abre PR
