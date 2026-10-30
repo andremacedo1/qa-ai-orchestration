@@ -51,8 +51,12 @@ graph TD
     Coord -->|Delega Tarefa| Analyst
     Analyst -->|Gera Gherkin/Specs| PW
     Reviewer -->|Audita Code Quality| IT
+```
 
-    sequenceDiagram
+### 2. O Fluxo Diário (Tarefas -> Automação)
+
+```mermaid
+sequenceDiagram
     participant Dev as Desenvolvedor
     participant Tracker as Gestor de Tarefas
     participant MCP as Watcher (MCP)
@@ -67,9 +71,12 @@ graph TD
     IA->>PW: Gera base do script E2E (Page Objects)
     PW->>PW: Testes E2E (Headless)
     IA->>Tracker: Publica Relatório de Qualidade
+```
 
+### 3. CI/CD: Guardião do Repositório
 
-    stateDiagram-v2
+```mermaid
+stateDiagram-v2
     [*] --> PullRequestCriado: Dev abre PR
     
     state "Interceptação via Git Hook" as Hook {
@@ -90,3 +97,11 @@ graph TD
     PR_Bloqueado --> [*]
     PR_Aprovado --> MergeProducao: Merge Liberado
     MergeProducao --> [*]
+```
+
+## 📁 Estrutura deste Showcase
+Explore as pastas acima para visualizar a arquitetura base do projeto (dados sensíveis e regras de negócios reais foram removidos por motivos de confidencialidade):
+- `/templates`: Estrutura de padronização para as saídas da IA.
+- `/agents`: Parâmetros e comportamentos definidos para cada agente especialista.
+- `/scripts`: Shell scripts para integração com o sistema operacional e Git.
+- `/playwright-base`: Estrutura de execução para a automação.
